@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# simple grep replacement for sorted data
+#
+# The idea here is that if we are looking at a file which is composed of
+# lines sorted in order, and you have some idea what the lines you're
+# interested in will start with, you should be able to efficiently pull
+# out your target, even if the file is large.
+#
+# For example, many log files start with a timestamp composed in a
+# sortable order (i.e., year, month, day, hour, minute, second), where you
+# may well have a fairly precise idea of what you want (e.g., from
+# 12:02:05 on March 3, 2016 and the 10 seconds following). Normal grep
+# will scan the entire file, which is a painful exercise if the file is
+# many gigabytes.  sgrep will in contrast seek to the interesting region
+# and then search for a regular expression pattern only within that
+# region.
+#
+# So for the example given above, one would search as follows if looking
+# at an artifactory request log:
+#
+#       sgrep 20160303120205 20160303120215 some_regex_pattern /private/artifactory/logs/request.log
+#
+ruby -wS sgrep.rb "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
+exit
+$dp/bin/sgrep lsdkfj lskdjf
