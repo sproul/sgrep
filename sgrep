@@ -23,4 +23,4 @@
 #
 ruby -wS sgrep.rb "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
 exit
-$dp/bin/sgrep lsdkfj lskdjf
+$dp/bin/sgrep a z 204lsdkfj /bin/bash
